@@ -1,19 +1,12 @@
 <script lang="ts">
 	import { portfolio } from "../lib/stores/portfolio";
+	import { activeSection, setActiveSection } from "../lib/stores/scrollController";
 
 	const words = $portfolio.personal.name.trim().split(/\s+/);
 
 	const firstCharacters: string[] = words.filter((word) => word.length > 0).map((word) => word[0].toUpperCase());
 
 	const navLogo = firstCharacters.join("");
-
-	let activeSection = $state("home");
-
-	function scrollToSection(section: string) {
-		activeSection = section;
-		const element = document.getElementById(section);
-		element?.scrollIntoView({ behavior: "smooth" });
-	}
 </script>
 
 <nav class="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
@@ -24,8 +17,8 @@
 			<div class="hidden md:flex gap-8">
 				{#each ["home", "about", "experience", "projects", "contact"] as section}
 					<button
-						onclick={() => scrollToSection(section)}
-						class="text-sm font-medium transition-colors duration-300 {activeSection === section ? 'text-blue-400' : 'text-muted-foreground hover:text-foreground'}"
+						onclick={() => setActiveSection(section)}
+						class="text-sm font-medium transition-colors duration-300 {$activeSection === section ? 'text-blue-400' : 'text-muted-foreground hover:text-foreground'}"
 						aria-label={section.charAt(0).toUpperCase() + section.slice(1)}
 					>
 						{section.charAt(0).toUpperCase() + section.slice(1)}

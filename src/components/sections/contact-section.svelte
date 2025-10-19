@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { portfolio } from '../lib/stores/portfolio';
+  import { portfolio } from '../../lib/stores/portfolio';
 
   let formData = $state({
     name: '',

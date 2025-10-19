@@ -1,5 +1,9 @@
 <script lang="ts">
-  import { portfolio } from '../lib/stores/portfolio';
+  import { portfolio } from '../../lib/stores/portfolio';
+
+  $effect(()=>{
+    console.log("about");
+  });
 </script>
 
 <section id="about" class="min-h-screen py-20 px-4 sm:px-6 lg:px-8 bg-secondary/30">

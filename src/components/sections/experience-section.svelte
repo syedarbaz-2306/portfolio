@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { portfolio } from '../lib/stores/portfolio';
+  import { portfolio } from '../../lib/stores/portfolio';
 </script>
 
 <section id="experience" class="py-20 px-4 sm:px-6 lg:px-8">

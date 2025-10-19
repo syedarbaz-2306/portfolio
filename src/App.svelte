@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { portfolio } from "./lib/stores/portfolio";
 	import Navigation from "./components/navigation.svelte";
-	import HeroSection from "./components/hero-section.svelte";
-	import AboutSection from "./components/about-section.svelte";
-	import ExperienceSection from "./components/experience-section.svelte";
-	import ProjectsSection from "./components/projects-section.svelte";
-	import ContactSection from "./components/contact-section.svelte";
+	import HeroSection from "./components/sections/hero-section.svelte";
+	import AboutSection from "./components/sections/about-section.svelte";
+	import ExperienceSection from "./components/sections/experience-section.svelte";
+	import ProjectsSection from "./components/sections/projects-section.svelte";
+	import ContactSection from "./components/sections/contact-section.svelte";
 	const name = $portfolio.personal.name;
 	const title = $portfolio.personal.title;
 </script>
