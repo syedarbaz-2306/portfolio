@@ -1,7 +1,8 @@
 <script lang="ts">
-	import { setActiveSection } from "../../lib/stores/scrollController";
+	import { setActiveSection } from "../../lib/stores/activeSection";
 	import { portfolio } from "../../lib/stores/portfolio";
 	import { onMount } from "svelte";
+	import ScrollController from "../scroll-controller.svelte";
 
 	let isVisible = $state(false);
 
@@ -10,9 +11,11 @@
 	});
 </script>
 
-<section
-	id="home"
-	class="min-h-screen flex items-center justify-center pt-16 px-4 sm:px-6 lg:px-8"
+<ScrollController
+	sectionId="home"
+	threshold={1}
+	duration={1200}
+	distance={50}
 >
 	<div class="max-w-4xl mx-auto text-center">
 		<div class="transition-all duration-1000 {isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}">
@@ -62,4 +65,4 @@
 			</svg>
 		</div>
 	</div>
-</section>
+</ScrollController>

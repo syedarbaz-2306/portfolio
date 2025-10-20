@@ -1,12 +1,13 @@
 <script lang="ts">
   import { portfolio } from '../../lib/stores/portfolio';
+	import ScrollController from '../scroll-controller.svelte';
 
   $effect(()=>{
     console.log("about");
   });
 </script>
 
-<section id="about" class="min-h-screen py-20 px-4 sm:px-6 lg:px-8 bg-secondary/30">
+<ScrollController sectionId='about' threshold={0.6} distance={50} duration={1200}>
   <div class="max-w-4xl mx-auto">
     <h2 class="text-4xl font-bold mb-12 text-center">About Me</h2>
 
@@ -45,4 +46,4 @@
       </div>
     </div>
   </div>
-</section>
+</ScrollController>

@@ -69,28 +69,19 @@ const portfolioData = {
 			link: "https://github.com",
 			featured: true,
 		},
-		{
-			id: 3,
-			title: "AI Chat Interface",
-			description: "Modern chat application with AI integration, message history, and user authentication.",
-			image: "/ai-chat.jpg",
-			technologies: ["Next.js", "OpenAI API", "MongoDB", "Socket.io"],
-			link: "https://github.com",
-			featured: false,
-		},
-		{
-			id: 4,
-			title: "Analytics Dashboard",
-			description: "Real-time analytics dashboard with data visualization, custom reports, and export functionality.",
-			image: "/analytics-dashboard.png",
-			technologies: ["React", "D3.js", "Express.js", "PostgreSQL"],
-			link: "https://github.com",
-			featured: false,
-		},
 	],
 };
 
 export const portfolio = writable(portfolioData);
+
+export function navIcon(): string {
+	const words = portfolioData.personal.name.trim().split(/\s+/);
+
+	const firstCharacters = words.filter((word) => word.length > 0).map((word) => word[0].toUpperCase());
+
+	const navLogo = firstCharacters.join("");
+	return navLogo;
+}
 
 export function updatePortfolio(updates: any) {
 	portfolio.update((data) => ({ ...data, ...updates }));
