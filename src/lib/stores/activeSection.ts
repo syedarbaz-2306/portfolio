@@ -10,10 +10,6 @@ export function setActiveSection(section: string) {
 	scrollToSection(section);
 }
 
-export function setIntersectingSection(section: string) {
-	activeSection.set(section);
-}
-
 function scrollToSection(section: string) {
 	const element = document.getElementById(section);
 	element?.scrollIntoView({ behavior: "smooth" });
