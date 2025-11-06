@@ -74,7 +74,7 @@
 >
   <!-- The inner wrapper for the animation -->
   <div 
-    class="max-w-4xl mx-auto transition-all ease-out"
+    class="mx-auto transition-all ease-out"
     style={animationStyle}
     class:opacity-100={isVisible}
     class:translate-y-0={isVisible}

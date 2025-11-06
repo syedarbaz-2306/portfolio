@@ -18,14 +18,14 @@
 					class="group relative overflow-hidden rounded-lg border border-border hover:border-blue-400/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-400/20"
 					style="animation: fadeInUp 0.6s ease-out {index * 0.15}s both"
 				>
-					<div class="relative h-64 overflow-hidden bg-secondary">
+					<!-- <div class="relative h-64 overflow-hidden bg-secondary">
 						<img
 							src={project.image || "/placeholder.svg"}
 							alt={project.title}
 							class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
 						/>
 						<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-					</div>
+					</div> -->
 
 					<div class="p-6">
 						<h3 class="text-xl font-semibold mb-2 text-blue-400">{project.title}</h3>

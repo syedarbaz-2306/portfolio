@@ -25,7 +25,7 @@
 				</span>
 			</h1>
 
-			<p class="text-xl sm:text-2xl text-muted-foreground mb-8 text-balance">
+			<p class="text-xl sm:text-2xl text-muted-foreground mb-8 text-balance text-shimmer">
 				{$portfolio.personal.title}
 			</p>
 
