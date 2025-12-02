@@ -7,7 +7,6 @@ const portfolioData = {
 		email: "syedarbaz1605@gmail.com",
 		phone: "+918792120918",
 		location: "Bangalore, India",
-		bio: "My expertise lies in developing unified solutions from web portals to cross platform mobile apps that securely and efficiently consume complex external APIs. I excel at translating critical business requirements into robust, scalable, and user-centric software, bridging the frontend experience with backend logic and ensuring seamless performance across all devices.",
 		summary: "Results-driven Software Engineer with experience in full-stack development and a strong focus on building scalable, user-centric applications. Proficient in modern web and mobile technologies, with a proven ability to deliver high-quality solutions in fast-paced startup environments. Adept at collaborating with cross-functional teams to drive product innovation and improve user experiences.",
 	},
 	social: [
@@ -30,13 +29,13 @@ const portfolioData = {
 			duration: "2024 Feb - Present",
 			description: "I serve as a Full-Stack Developer at Brewszilla Technologies, responsible for, developing, and integrating complete software solutions across web and mobile platforms. My expertise bridges the gap between client-side user experience and robust API interaction, ensuring seamless functionality and data integrity.",
 			responsibilities: [],
-			skills: ["Flutter", "React", "Svelte", "Go", "Java", "TypeScript", "Dart", "n8n", "Provider(Bloc/Riverpod)"],
+			skills: ["Flutter", "React", "Svelte", "Go", "Java", "TypeScript", "Dart", "n8n", "State Management(Bloc/Riverpod)"],
 		},
 	],
 	skills: [
 		{
 			category: "Frontend",
-			items: ["Flutter", "React", "Svelte Kit", "TypeScript", "Tailwind CSS", "Next.js", "Provider(Bloc/RiverPod)", "Redux", "Svelte(Store)"],
+			items: ["Flutter", "React", "Svelte Kit", "TypeScript", "Tailwind CSS", "Next.js", "State Management(Bloc/Riverpod)", "Redux", "Svelte(Store)"],
 		},
 		{
 			category: "Backend",
@@ -54,24 +53,35 @@ const portfolioData = {
 	projects: [
 		{
 			id: 1,
-			title: "MVIL Public Service Web Portal (CTP Insurance & Registration)",
-			subTitle: "Full-Stack Web Application / Government-Service Web Portal",
-			description: "a centralized, user-friendly digital platform for citizens of PNG to access insurance, registration, and driver licensing services.",
-			image: "https://mvil.com.pg/",
-			technologies: ["Svelte Kit", "Tailwind CSS", "Axios", "Nodejs", "Express", "GrapghQl", "Postgres"],
-			link: "https://mvil.com.pg/",
-			keyFeaturesImpl: ["Information Architecture: Developed a clear site structure for core services (CTP, Registration, Licensing, Claims).", "Online Service Tools: Implemented forms and logic for Get a Quote, Make a Claim, and access to Downloadable Forms.", "Responsive Design: Ensured a seamless, accessible experience across desktop and mobile devices.", "Content Management System: Integrated a system for timely updates to News and Branch details."],
+			title: "Brewszilla Meetup Booking and Management Platform",
+			subTitle: "",
+			description: "",
+			image: "",
+			technologies: ["Golang", "Svelte kit", "PostgreSQL", "Hasura", "GraphQL", "RazorPay"],
+			link: "https://brewszilla.com/meetup",
+			keyFeaturesImpl: ["Developed a full-service event management and booking platform connecting users with partner venues to host organized social and professional meetups.", "The system allows users to browse and reserve spots at various events, categorized as Singles or Corporate Meets.","Facilitates seamless internal collaboration with third-party outlets, managing event scheduling and venue availability visible on the website for user sign-ups."],
 			featured: false,
 		},
 		{
 			id: 2,
-			title: "CMIS Client-Side Development (Web Portal & Flutter Mobile App)",
-			subTitle: "Enterprise Resource Planning (ERP) / Management Information System (MIS)",
-			description: "build two distinct, high-fidelity frontends (Web and Mobile) capable of securely consuming data via a predefined RESTful API to manage cocoa operations.",
+			title: "Cocoa Management Information System (CMIS App)",
+			subTitle: "",
+			description: "",
 			image: "",
-			technologies: ["Flutter", "React", "Tailwind CSS", "Axios", "Redux(React)", "Provider(Flutter)"],
+			technologies: ["Flutter", "State Management(Bloc/Riverpod)", "sqflite", "Dio"],
 			link: "https://cmis.cocoaboard.org.pg/",
-			keyFeaturesImpl: ["Frontend Architecture:implemented a scalable component structure for both the web (React) and mobile (Flutter) applications.", "API Integration: Managed all client-side logic for secure token-based authentication (JWTs) and integrating endpoints for data fetching and submission.", "UI/UX Development: Implemented the complete visual design, focusing on data visualization, input forms, and role-based view logic for different users (farmer vs. inspector)."],
+			keyFeaturesImpl: ["Developed a mobile application to manage farmer and farmer group data with both online and offline functionality.", "Implemented local offline storage using SQLite, allowing the app to function fully without internet.", "Built an automated sync mechanism that uploads offline records to the main PostgreSQL database once the device reconnects to the internet, removing local copies to prevent duplication.","Enabled real-time global access to synced data for all authorized users."],
+			featured: false,
+		},
+		{
+			id: 3,
+			title: "MVIL Public Service Web Portal (CTP Insurance & Registration)",
+			subTitle: "",
+			description: "",
+			image: "https://mvil.com.pg/",
+			technologies: ["SvelteKit", "Tailwind CSS", "GraphQL", "Hasura", "PostgreSQL"],
+			link: "https://mvil.com.pg/",
+			keyFeaturesImpl: ["Developed official corporate and service portal for Motor Vehicles Insurance Ltd (MVIL).", "The portal serves as the central digital interface for accessing critical government-mandated motor vehicle services in PNG.", "It provides comprehensive public information and facilitates procedures for Compulsory Third Party (CTP) Insurance and quotes.", "The platform supports official processes for Vehicle Registration and Driver's License services.", "It includes a dedicated section for Claims Management, outlining procedures and providing necessary documentation.","The system streamlines essential civic processes for a large user base of CTP policyholders."],
 			featured: false,
 		},
 	],
@@ -86,29 +96,4 @@ export function navIcon(): string {
 
 	const navLogo = firstCharacters.join("");
 	return navLogo;
-}
-
-export function updatePortfolio(updates: any) {
-	portfolio.update((data) => ({ ...data, ...updates }));
-}
-
-export function updatePersonal(updates: any) {
-	portfolio.update((data) => ({
-		...data,
-		personal: { ...data.personal, ...updates },
-	}));
-}
-
-export function updateExperience(id: number, updates: any) {
-	portfolio.update((data) => ({
-		...data,
-		experience: data.experience.map((exp) => (exp.id === id ? { ...exp, ...updates } : exp)),
-	}));
-}
-
-export function updateProject(id: number, updates: any) {
-	portfolio.update((data) => ({
-		...data,
-		projects: data.projects.map((proj) => (proj.id === id ? { ...proj, ...updates } : proj)),
-	}));
 }

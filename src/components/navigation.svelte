@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { navIcon, portfolio } from "../lib/stores/portfolio";
-	import { activeSection, setActiveSection, sections } from "../lib/stores/activeSection";
+	import { activeSection, sections, scrollToSection } from "../lib/stores/activeSection";
 
 	let data = $portfolio;
 </script>
@@ -13,7 +13,7 @@
 			<div class="hidden md:flex gap-8">
 				{#each sections as section}
 					<button
-						onclick={() => setActiveSection(section)}
+						onclick={() => scrollToSection(section)}
 						class="text-sm font-medium transition-colors duration-300 {$activeSection === section ? 'text-blue-400' : 'text-muted-foreground hover:text-foreground'}"
 						aria-label={section.charAt(0).toUpperCase() + section.slice(1)}
 					>

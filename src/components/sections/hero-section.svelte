@@ -1,17 +1,13 @@
 <script lang="ts">
-	import { setActiveSection } from "../../lib/stores/activeSection";
 	import { portfolio } from "../../lib/stores/portfolio";
-	import { onMount } from "svelte";
-
-	let isVisible = $state(false);
-
-	onMount(() => {
-		isVisible = true;
-	});
+	import { scrollToSection } from "../../lib/stores/activeSection";
 </script>
 
-<div id="home" class="min-h-screen flex flex-col justify-center items-center xl:max-w-4xl mx-auto text-center p-3">
-	<div class="transition-all duration-1000 {isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}">
+<div
+	id="about"
+	class="min-h-screen flex flex-col justify-center items-center xl:max-w-4xl mx-auto text-center p-3"
+>
+	<div class="transition-all duration-1000">
 		<h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 text-balance">
 			<span class="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent">
 				{$portfolio.personal.name}
@@ -28,13 +24,13 @@
 
 		<div class="flex flex-col sm:flex-row gap-4 justify-center">
 			<button
-				onclick={() => setActiveSection("projects")}
+				onclick={() => scrollToSection("projects")}
 				class="px-8 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/50"
 			>
 				View My Work
 			</button>
 			<button
-				onclick={() => setActiveSection("contact")}
+				onclick={() => scrollToSection("contact")}
 				class="px-8 py-3 border border-blue-400 text-blue-400 hover:bg-blue-400/10 rounded-lg font-medium transition-all duration-300"
 			>
 				Get In Touch

@@ -1,8 +1,8 @@
 import { writable, type Writable } from "svelte/store";
 
-export const sections = ["home", "about", "experience", "projects", "contact"];
+export const sections = [ "about", "experience", "projects", "skills", "contact"];
 
-export const activeSection: Writable<string> = writable('home');
+export const activeSection: Writable<string> = writable('about');
 
 export function setActiveSection(section: string) {
 	activeSection.set(section);
@@ -10,7 +10,8 @@ export function setActiveSection(section: string) {
 	scrollToSection(section);
 }
 
-function scrollToSection(section: string) {
+export function scrollToSection(section: string) {
 	const element = document.getElementById(section);
+	activeSection.set(section);
 	element?.scrollIntoView({ behavior: "smooth" });
 }

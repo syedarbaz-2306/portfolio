@@ -1,8 +1,13 @@
 <script lang="ts">
 	import { portfolio } from "../../lib/stores/portfolio";
+	import scrollAnimate from "../../lib/actions/scrollAnimate";
+	import { setActiveSection } from "../../lib/stores/activeSection";
 </script>
 
-<div id="projects" class="min-h-screen flex flex-col justify-center items-center max-w-6xl mx-auto">
+<div
+	id="projects"
+	class="min-h-screen flex flex-col justify-center items-center max-w-6xl mx-auto transition-all duration-1000"
+>
 	<h2 class="text-4xl font-bold mb-12 text-center">Featured Projects</h2>
 
 	<div class="grid md:grid-cols-2 gap-8">
